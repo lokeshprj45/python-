@@ -1,0 +1,38 @@
+import turtle
+
+# create a turtle object
+lotus = turtle.Turtle()
+
+# set the background color
+turtle.bgcolor("black")
+
+# set the pen size and speed
+lotus.pensize(2)
+lotus.speed(100)
+
+# set the starting position of the turtle
+lotus.penup()
+lotus.goto(0, -200)
+lotus.pendown()
+
+# draw the lotus petals
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+for i in range(36):
+    lotus.color(colors[i % 6])
+    lotus.circle(200, 60)
+    lotus.left(120)
+    lotus.circle(200, 60)
+    lotus.left(120)
+    lotus.right(10)
+
+# draw the center of the lotus
+lotus.color("white")
+lotus.begin_fill()
+lotus.circle(0)
+lotus.end_fill()
+
+# hide the turtle
+lotus.hideturtle()
+
+# keep the window open
+turtle.done()
